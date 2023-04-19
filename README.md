@@ -14,7 +14,7 @@ Database: MySQL, MariaDB
 Tools: Git, Jupyter Notebook, Anaconda, Visual Studio Code, IntelDEA
 Frameworks: Django, Laravel
 
-#Projects
+# Projects
 
 Project 1: Sales Analysis Dashboard
 This is a web-based dashboard that analyzes sales data for a retail company. It displays various charts and tables that provide insights into sales trends, top-selling products, and customer behavior. The dashboard was built using Python and various web development technologies.
@@ -23,7 +23,7 @@ Project 2: Movie Recommender System
 
 This is a recommendation engine that suggests movies based on a user's preferences. It uses collaborative filtering techniques to recommend movies that are similar to those that the user has previously enjoyed. The system was built using Python and various machine learning libraries.
 
-#Contact Me
+# Contact Me
 
 If you want to get in touch with me, feel free to connect with me on LinkedIn or send me an email at diomferreira@gmail.com.
 
