@@ -25,10 +25,9 @@ html{
     background: #555;
 }
 
-.max-width{
-    max-width: 1300px;
-    margin: auto;
+.max-width{   
     padding: 0 20px;
+    overflow: hidden;
 }
 .about, footer{
     font-family: 'Poppins', sans-serif;
@@ -272,6 +271,15 @@ section .title::after{
 .home .home-content a:hover{
     background: none;
     color : #fff;
+}
+
+.home-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 5%;
 }
 
 /* Border Between Content */
@@ -528,7 +536,6 @@ footer span a:hover{
   top: 20px;
   background-color: #393939;
   }
-  
 }
 
 
