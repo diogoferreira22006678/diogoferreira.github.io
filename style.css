@@ -25,9 +25,10 @@ html{
     background: #555;
 }
 
-.max-width{   
+.max-width{
+    max-width: 1300px;
+    margin: auto;
     padding: 0 20px;
-    overflow: hidden;
 }
 .about, footer{
     font-family: 'Poppins', sans-serif;
@@ -273,15 +274,6 @@ section .title::after{
     color : #fff;
 }
 
-.home-content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    text-align: left;
-    padding-left: 5%;
-}
-
 /* Border Between Content */
 .border-btw-content {
   background: url("images/banner.jpg") no-repeat center;
@@ -293,6 +285,7 @@ section .title::after{
 }
 
 .container{
+  justify-content: center;
   padding-top: 5%;
   padding-bottom: 10%;
 }
@@ -479,6 +472,81 @@ section .title::after{
   max-width: 990px;
   margin: 0 auto;
 }
+
+/* contact section styling */
+
+.contact {
+  background-image: url(/images/pokemon-map.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.contact .title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: green;
+}
+
+.contact .title::before {
+  background: green;
+}
+
+/* Form styles */
+.contact-form {
+  background-color: #fff;
+  padding: 80px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-group input,
+.form-group textarea {
+  font-size: 20px; 
+  border: 1px solid #ccc; 
+  border-radius: 5px;
+  padding: 10px; 
+  width: 100%;
+  box-sizing: border-box; 
+  margin-bottom: 20px; 
+  resize: vertical; 
+  font: 'Ubuntu', sans-serif;
+}
+
+.contact-form .form-control {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 20px;
+}
+
+.contact-form .form-control:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.contact-form textarea.form-control {
+  resize: none;
+}
+
+.submit-btn {
+  background-color: #008000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #006600;
+}
+
+
+
 /* footer section styling */
 footer{
     background: #111;
@@ -536,6 +604,7 @@ footer span a:hover{
   top: 20px;
   background-color: #393939;
   }
+  
 }
 
 
