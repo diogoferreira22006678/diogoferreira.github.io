@@ -49,8 +49,13 @@
                     <div class="overlay">
                       <div class="text" style="color: #ffffff;">Edição de Imagem</div>
                       <div class="card-body">
-                        <img src="https://picsum.photos/id/237/300/200" alt="Imagem aleatória" id="randomImage">
-                        <input type="text" id="inspired" placeholder="Escreva uma frase inspirada na imagem">            
+                        <div class="image-container">
+                            <img src="https://picsum.photos/id/237/300/200" width="200px" weight="200px" id="image" alt="Imagem" >
+                            <div class="text-overlay">
+                              <p id="textOverPhoto" style="color: #ffffff;"></p>
+                            </div>
+                          </div>
+                        <div class="image-container"><input type="text" id="inspired" placeholder="Escreva uma frase inspirada na imagem"></div>            
                        </div>
                     </div>
                   </div>
@@ -79,7 +84,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            padding-left: 20%;
+            padding-left: 17%;
         }
 
         .card {
@@ -100,7 +105,22 @@
             transform: scale(1.1);
         }
 
-        
+        .image-container {
+        position: relative;
+        /* center the image */
+        display: flex;
+        justify-content: center;
+        }
+
+        .text-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        }
+
+
     </style>
 
 
@@ -132,9 +152,21 @@
             for (var i = 0; i < elements.length; i++) {
                 elements[i].style.color = "black";
             }
-            // alter the background of the body into a bright image
-            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1519680772-3b1b1b1b1b1b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZGFya2luZyUyMG1vbmV5fGVufDB8fDB8&ixlib=rb-1.2.1&w=1000&q=80')";
-        } else {
+            // alter every a element in the page
+            var elements = document.getElementsByTagName("a");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].style.color = "black";
+            }
+            // make the box shadow of the cards white
+            var elements = document.getElementsByClassName("card");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.2)";
+            }
+            // make the sun icon black
+            document.getElementById("dark-mode-icon").style.color = "black";
+            // alter to a bright image
+            document.getElementById("home").style.background = "aliceblue";
+                } else {
             document.getElementById("date").style.color = "white";
             // alter the color of every text p and div in the page
             var elements = document.getElementsByTagName("p");
@@ -145,8 +177,20 @@
             for (var i = 0; i < elements.length; i++) {
                 elements[i].style.color = "white";
             }
+            // alter every a and span in the page
+            var elements = document.getElementsByTagName("a");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].style.color = "white";
+            }
+            // make the moon icon white
+            document.getElementById("dark-mode-icon").style.color = "white";
+            document.getElementById("home").style.background = "url('images/banner.jpg') no-repeat center";
+            // make the box shadow of the cards black
+            var elements = document.getElementsByClassName("card");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.2)";
+            }
         }
-
     });
   
     // Calculator 
@@ -171,13 +215,18 @@
     // Inspired text
     const inspiredInput = document.getElementById("inspired");
   
+    const inspiredImage = document.getElementById("textOverPhoto");
+
+    // Add a event listener to the inspired text input to change the image when the input changes
     inspiredInput.addEventListener("change", () => {
-      const inspiredText = inspiredInput.value;
-      const image = inspiredInput.previousElementSibling;
-      const overlay = document.createElement("div");
-      overlay.classList.add("overlay");
-      overlay.textContent = inspiredText;
-      image.parentNode.insertBefore(overlay, image.nextSibling);
+        // alter input the value of the input on top of the image
+        inspiredImage.textContent = inspiredInput.value;
+    });
+
+    // Add a event listener to the inspired text input to change the image when the input changes
+    inspiredInput.addEventListener("change", () => {
+        // alter input the value of the input on top of the image
+        inspiredImage.textContent = inspiredInput.value;
     });
   
     // Name
@@ -197,11 +246,17 @@
 
     function changeBackground() {
       var randomColor = Math.floor(Math.random()*16777215).toString(16);
-      document.body.style.backgroundColor = "#" + randomColor;
+      // change style of id "home"
+        document.getElementById("home").style.background = "#" + randomColor;
     }
 
     function resetBackground() {
-      document.body.style.backgroundColor = "#ffffff";
+        // if the theme is dark, change to the dark image and if it is light, change to the light image
+        if (document.body.classList.contains("dark-theme")) {
+            document.getElementById("home").style.background = "aliceblue";
+        } else {
+            document.getElementById("home").style.background = "url('images/banner.jpg') no-repeat center";
+        }
     }
   
   </script>
