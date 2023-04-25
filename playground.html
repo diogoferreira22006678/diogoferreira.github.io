@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>About</title>
+</head>
+<body>
+    <div class="scroll-up-btn">
+        <i class="fas fa-angle-up"></i>
+    </div>
+    <nav class="navbar">
+      <div class="max-width">
+        <div class="logo">
+          <a href="#">Lab<span>5.</span></a>
+        </div>
+        <ul class="menu">
+          <li><a href="index.html" a>Portofolio</a></li>
+          <li><a class="fa-solid fa-moon" id="dark-mode-icon" style="color :white;"></a></li>
+          <li><a id=date></a></li>
+        </ul>
+        <div class="menu-btn">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </nav>
+      
+
+    <!-- home section start -->
+    <section class="home" id="home">
+            <div class="playground-content" style="justify-content: center;">
+                <!-- Responsive grid with 4 elements in total each one being a card -->
+                <div class="card">
+                    <div class="overlay">
+                      <div class="text" style="color: #ffffff;">Calculadora</div>
+                      <div class="card-body">
+                        <input type="text" id="expression" placeholder="Insira a expressão aritmética">
+                        <button id="calculate">Calcular</button>
+                        <button id="clear">Limpar</button>
+                      <div>
+                        <p id="result" style="color: #ffffff;">Resultado: </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>  
+                  <div class="card">
+                    <div class="overlay">
+                      <div class="text" style="color: #ffffff;">Edição de Imagem</div>
+                      <div class="card-body">
+                        <img src="https://picsum.photos/id/237/300/200" alt="Imagem aleatória" id="randomImage">
+                        <input type="text" id="inspired" placeholder="Escreva uma frase inspirada na imagem">            
+                       </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="overlay">
+                      <div class="text" style="color: #ffffff;">Inserção de Nome</div>
+                      <p style="color: #ffffff;"> Bem-vindo, <span class="name"></span>!</p>
+                      <p style="color: #ffffff;">Aqui está o seu nome novamente: <span class="name"></span></p>
+                      <p style="color: #ffffff;">Desenvolvido por <span class="name"></span></p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="overlay">
+                        <div class="text" style="color: #ffffff;">Mouse Event</div>
+                        <div onmouseover="changeBackground()" onmouseout="resetBackground()">Hover me</div>
+                    </div>
+                  </div>
+        </div>
+    </section>
+
+    <style>
+        .playground-content {
+            /* center the content without using flexbox or grid */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding-left: 20%;
+        }
+
+        .card {
+            /* create a grid of 2 columns and 2 rows */
+            width: 300px;
+            height: 200px;
+            margin: 10px;
+            position: relative;
+            overflow: hidden;
+            /* add a border radius to the cards but with a bit of padding to avoid the content to be clipped */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            transition: transform 0.5s;
+
+        }
+
+        .card:hover {
+            transform: scale(1.1);
+        }
+
+        
+    </style>
+
+
+
+    <!-- footer section start -->
+    <footer>
+        <span>Created By <a href="https://github.com/diogoferreira22006678">Diogo Ferreira</a> | <span class="far fa-copyright"></span> 2023 All rights reserved.</span>
+    </footer>
+
+</body>
+<script>
+    // Add a event listener to the dark mode icon and light mode icon to change the theme of the page when clicked and alternate sun and moon icons in the same div
+    document.getElementById("dark-mode-icon").addEventListener("click", function() {
+        // alter the theme of the page 
+        document.body.classList.toggle("dark-theme");
+        // alter the icon of the div
+        this.classList.toggle("fa-moon");
+        this.classList.toggle("fa-sun");
+
+        // if the theme is dark, change the color of the text to white
+        if (document.body.classList.contains("dark-theme")) {
+            document.getElementById("date").style.color = "black";
+            // alter the color of every text p and div in the page
+            var elements = document.getElementsByTagName("p");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].style.color = "black";
+            }
+            var elements = document.getElementsByTagName("div");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].style.color = "black";
+            }
+            // alter the background of the body into a bright image
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1519680772-3b1b1b1b1b1b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZGFya2luZyUyMG1vbmV5fGVufDB8fDB8&ixlib=rb-1.2.1&w=1000&q=80')";
+        } else {
+            document.getElementById("date").style.color = "white";
+            // alter the color of every text p and div in the page
+            var elements = document.getElementsByTagName("p");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].style.color = "white";
+            }
+            var elements = document.getElementsByTagName("div");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].style.color = "white";
+            }
+        }
+
+    });
+  
+    // Calculator 
+    const expressionInput = document.getElementById("expression");
+    const calculateButton = document.getElementById("calculate");
+    const clearButton = document.getElementById("clear");
+    const resultElement = document.getElementById("result");
+  
+    calculateButton.addEventListener("click", () => {
+      const expression = expressionInput.value;
+      if (expression) {
+        const result = eval(expression);
+        resultElement.textContent = `Resultado: ${result}`;
+      }
+    });
+  
+    clearButton.addEventListener("click", () => {
+      expressionInput.value = "";
+      resultElement.textContent = "Resultado: ";
+    });
+  
+    // Inspired text
+    const inspiredInput = document.getElementById("inspired");
+  
+    inspiredInput.addEventListener("change", () => {
+      const inspiredText = inspiredInput.value;
+      const image = inspiredInput.previousElementSibling;
+      const overlay = document.createElement("div");
+      overlay.classList.add("overlay");
+      overlay.textContent = inspiredText;
+      image.parentNode.insertBefore(overlay, image.nextSibling);
+    });
+  
+    // Name
+    const nameSpans = document.querySelectorAll(".name");
+    const name = prompt("Qual é o seu nome?");
+    for (const nameSpan of nameSpans) {
+      nameSpan.textContent = name;
+    }
+  
+    const dateElement = document.getElementById("date");
+    const now = new Date();
+    const options = { month: "long", day: "numeric", year: "numeric" };
+    const formattedDate = now.toLocaleDateString("pt-PT", options);
+    dateElement.textContent = formattedDate;
+  
+    // Mouse Over Event to change the background color from the card to a random color
+
+    function changeBackground() {
+      var randomColor = Math.floor(Math.random()*16777215).toString(16);
+      document.body.style.backgroundColor = "#" + randomColor;
+    }
+
+    function resetBackground() {
+      document.body.style.backgroundColor = "#ffffff";
+    }
+  
+  </script>
+  <script src="https://kit.fontawesome.com/0bcce8cda6.js" crossorigin="anonymous"></script>
+</html>

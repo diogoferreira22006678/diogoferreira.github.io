@@ -257,7 +257,7 @@ section .title::after{
     color: #1463F3;
     font-weight: 500;
 }
-.home .home-content a{
+.home .home-content #talkWithMe{
     display: inline-block;
     background: #1f306a;
     color: #fff;
@@ -269,9 +269,25 @@ section .title::after{
     border: 2px solid #1f306a;
     transition: all 0.3s ease;
 }
-.home .home-content a:hover{
+
+.home .home-content #talkWithMe:hover{
     background: none;
     color : #fff;
+}
+
+.home .home-content a {
+  display: inline-block;
+  color: #fff;
+  font-size: 25px;
+  padding: 12px 36px;
+  margin-top: 20px;
+  font-weight: 400;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.home .home-content a:hover {
+  color:rgb(87, 87, 87);
 }
 
 /* Border Between Content */
