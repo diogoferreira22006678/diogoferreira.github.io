@@ -262,7 +262,7 @@ section .title::after{
     background: #1f306a;
     color: #fff;
     font-size: 25px;
-    padding: 12px 36px;
+    padding: 12px 50px;
     margin-top: 20px;
     font-weight: 400;
     border-radius: 6px;
@@ -279,7 +279,7 @@ section .title::after{
   display: inline-block;
   color: #fff;
   font-size: 25px;
-  padding: 12px 36px;
+  padding: 16px 16px;
   margin-top: 20px;
   font-weight: 400;
   border-radius: 6px;
@@ -339,9 +339,6 @@ section .title::after{
   transform: scaleX(-1);
 }
 
-.about-content .right-col, .studies-content .right-col, .skills-content .right-col {
-  flex: 1;
-}
 /* when image is on right side */
 .studies-content .right-col img {
   margin-left: 15%;
@@ -515,9 +512,18 @@ section .title::after{
 }
 
 /* Form styles */
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
 .contact-form {
   background-color: #fff;
-  padding: 80px;
+  padding: 20px 25px;
+  width: 100%;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
@@ -628,6 +634,19 @@ footer span a:hover{
   #celebi {
     display: none;
   }
+
+  #typed {
+    font-size: 1.5rem;
+  }
+
+  #typed2 {
+    font-size: 1.1rem;
+  }
+
+  .contact-container .right-col {
+    display: none;
+  }
+
 }
 
 
