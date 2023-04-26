@@ -341,7 +341,6 @@ section .title::after{
 
 .about-content .right-col, .studies-content .right-col, .skills-content .right-col {
   flex: 1;
-  margin-left: 40px;
 }
 /* when image is on right side */
 .studies-content .right-col img {
@@ -483,6 +482,7 @@ section .title::after{
 
 /* projects that im interested in */
 .container-flex{
+  display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
