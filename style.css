@@ -339,6 +339,9 @@ section .title::after{
   transform: scaleX(-1);
 }
 
+.about-content .right-col, .studies-content .right-col, .skills-content .right-col {
+  flex: 1;
+}
 /* when image is on right side */
 .studies-content .right-col img {
   margin-left: 15%;
@@ -643,8 +646,9 @@ footer span a:hover{
     font-size: 1.1rem;
   }
 
-  .contact-container .right-col {
+  #contact-right {
     display: none;
+    flex: 0;
   }
 
 }
