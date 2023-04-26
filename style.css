@@ -430,7 +430,10 @@ section .title::after{
 }
 
 .box img {
-  width: 100%;
+  /* fit content to box */
+  max-width: 100%;
+  height: auto;
+
 }
 
 .text {
@@ -562,8 +565,6 @@ section .title::after{
   background-color: #006600;
 }
 
-
-
 /* footer section styling */
 footer{
     background: #111;
@@ -621,8 +622,14 @@ footer span a:hover{
   top: 20px;
   background-color: #393939;
   }
-  
 }
+
+@media (max-width: 540px) {
+  #celebi {
+    display: none;
+  }
+}
+
 
 
 
