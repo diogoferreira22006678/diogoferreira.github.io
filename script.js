@@ -29,7 +29,7 @@ $(document).ready(function(){
         }
 
         // if the scroll position is bigger then the projects section turn the navbar color to red
-        if(scrollPos > projectsHeight){
+        if(scrollPos + 100 > projectsHeight){
             $('.navbar').addClass("red-bg");
             $('.scroll-up-btn').addClass("red");
         }else{
